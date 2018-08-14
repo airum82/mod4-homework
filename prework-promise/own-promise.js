@@ -8,6 +8,6 @@ const checkUser = () => {
       return reject(Error('not a user'))
     }
   });
-  return emptyPromise;
+  return emptyPromise.then(response => response.json());
 }
 
