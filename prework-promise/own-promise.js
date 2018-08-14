@@ -1,13 +1,22 @@
 let authUser = 'jim';
 
 const checkUser = () => {
-  const emptyPromise = new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     if(authUser) {
       return resolve(authUser)
     } else {
       return reject(Error('not a user'))
     }
   });
-  return emptyPromise.then(response => response.json());
+}
+
+const checkPw = (pw) => {
+  return new Promise((resolve, reject) => {
+    if (pw === 'sesame') {
+      return resolve('You may enter')
+    } else {
+      return reject(Error('Away with you'))
+    }
+  })
 }
 
